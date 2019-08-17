@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintHorizontal_chainStyle="spread_inside"
+    app:layout_constraintVertical_chainStyle="packed"
+    tools:context=".RegisterActivity"
+    android:background="#ffff"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="190dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/applogo" />
+
+    <TextView
+        android:id="@+id/sign_up_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/coustard"
+        android:textSize="24sp"
+        android:text="Sign Up"
+        />
+
+    <TextView
+        android:id="@+id/sign_up_brief"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/coustard"
+        android:gravity="center_horizontal"
+        android:text="@string/Sign_up_brief" />
+
+
+
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/reg_edittext"
+        android:ems="10"
+        android:hint="User name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/regEmail"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+
+        android:background="@drawable/reg_edittext"/>
+
+    <EditText
+        android:id="@+id/regPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/reg_edittext"/>
+
+    <EditText
+        android:id="@+id/reg_repeat_Password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Repeat password"
+        android:inputType="textPassword"
+        android:background="@drawable/reg_edittext"/>
+
+    <Button
+        android:id="@+id/reg_sign_up"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/reg_btn"
+        android:text="Sign Up"
+        android:textColor="#ffff" />
+
+    <ProgressBar
+        android:id="@+id/reg_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="100dp" />
+
+
+</LinearLayout>
