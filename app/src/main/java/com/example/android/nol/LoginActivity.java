@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,12 +28,19 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "LoginActivity";
     private EditText userEmail, userPassword;
     private Button loginButton;
     private ProgressBar loadingBar;
-
+    private String adminEmail = "admin@gmail.com";
+    private String adminPassword = "admin";
+    private  String parentDbase = "Admins";
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
+    private Intent AdminActivity;
+    private FirebaseDatabase mDataB;
+    private DatabaseReference databaseReference;
+    private String childDbase = "3280451693";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,10 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = findViewById(R.id.login_progressBar);
         mAuth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this,com.example.android.nol.HomeActivity.class);
+        AdminActivity = new Intent(this,com.example.android.nol.AdminActivity.class);
+
+
+
 
         loginButton.setVisibility(View.VISIBLE);
 
@@ -63,13 +75,21 @@ public class LoginActivity extends AppCompatActivity {
                     loginButton.setVisibility(View.VISIBLE);
                     loadingBar.setVisibility(View.INVISIBLE);
                 }
-                else{
-                    loginUser(email,password);
+                else if(email.equals(adminEmail) && password.equals(adminPassword)){
+                    startAdminActivity();
+                }
+
+                else {loginUser(email,password);
                 }
             }
         });
 
 
+    }
+
+    private void startAdminActivity() {
+        startActivity(AdminActivity);
+        finish();
     }
 
     private void loginUser(String email, String password) {
@@ -81,6 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                  loadingBar.setVisibility(View.INVISIBLE);
                  loginButton.setVisibility(View.VISIBLE);
                  updateUI();
+                 finish();
              }
              else {
                  showMessage(task.getException().getMessage());
@@ -90,6 +111,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     private void updateUI() {
         startActivity(HomeActivity);
@@ -111,5 +134,37 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+    public void basicRead(final String email, final String password) {
+        // [START write_message]
+        // Write a message to the database
+        mDataB = FirebaseDatabase.getInstance();
+        databaseReference = mDataB.getReference("Admins/3280451693/");
+        // [END write_message]
+
+        // [START read_message]
+        // Read from the database
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                if(dataSnapshot.child(parentDbase).child(childDbase).exists()){
+                Users users = dataSnapshot.child(parentDbase).child(childDbase).getValue(Users.class);
+                if(users.getEmail().equals(email) && users.getPassword().equals(password)){
+                    startAdminActivity();
+                }
+
+                Log.d(TAG, "Value is: " + users);
+            }}
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
 }
 

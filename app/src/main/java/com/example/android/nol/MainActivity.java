@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
        /*GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         updateUI(account);
 */
-       FirebaseUser user = mAuth.getCurrentUser();
+       /*FirebaseUser user = mAuth.getCurrentUser();
           if(user != null){
             updateUI();
-        }
+        }*/
 
     }
 

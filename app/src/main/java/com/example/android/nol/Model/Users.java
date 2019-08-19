@@ -2,16 +2,34 @@ package com.example.android.nol.Model;
 
 public class Users {
 
-    private String name, phone, password ;
+    private String name, email, password,address,phone ;
 
     public Users(){
 
     }
 
-    public Users(String name, String phone, String password) {
+    public Users(String name, String email, String password,String address,String phone) {
         this.name = name;
-        this.phone = phone;
+        this.email = email;
         this.password = password;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
@@ -22,12 +40,12 @@ public class Users {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

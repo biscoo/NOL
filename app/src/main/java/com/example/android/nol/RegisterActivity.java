@@ -46,6 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
         userPassword =  findViewById(R.id.regPassword);
         userRepeatPassword =  findViewById(R.id.reg_repeat_Password);
         loadingBar = findViewById(R.id.reg_progressBar);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
         loadingBar.setVisibility(View.INVISIBLE);
 
@@ -66,15 +68,18 @@ public class RegisterActivity extends AppCompatActivity {
                 if(name.isEmpty() || email.isEmpty() || password.isEmpty() || repeatPassword.isEmpty()){
 
                     showMessage("Please Verify all fields.");
+                    signUp.setVisibility(View.VISIBLE);
 
                 }
                 else if(!password.equals(repeatPassword)) {
                     showMessage("The password fields not matching");
+                    signUp.setVisibility(View.VISIBLE);
 
 
                     }
                 else {
                     createAccount(name,email,password);
+
 
                 }
 
@@ -84,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void createAccount(final String name, String email, String password) {
+    private void createAccount(final String name, final String email, String password) {
 
         mAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -92,11 +97,14 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if(task.isSuccessful()){
+                            finish();
                             showMessage("Account created Successfully");
                             Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class);
                             startActivity(homeActivity);
                             loadingBar.setVisibility(View.INVISIBLE);
                             signUp.setVisibility(View.VISIBLE);
+                            updateUserInfo(name, email,mAuth.getCurrentUser());
+                            finish();
                         }
                         else{
                             showMessage("Account creation failed" + task.getException().getMessage());
@@ -108,6 +116,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    private void updateUserInfo(String name, String email, FirebaseUser currentUser) {
+
+
+    }
 
 
     private void showMessage(String s) {
