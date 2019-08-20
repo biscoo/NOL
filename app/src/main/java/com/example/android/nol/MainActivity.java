@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-       GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+      /* GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         updateUI(account);
         finish();
 
@@ -102,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
           if(user != null){
             updateUI();
             finish();
-        }
+        }*/
+
 
     }
 
