@@ -12,10 +12,8 @@ import android.os.Bundle;
 
 import com.example.android.nol.Model.Products;
 import com.example.android.nol.ViewHolder.ProductViewHolder;
-import com.facebook.internal.CallbackManagerImpl;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,7 +37,6 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -61,8 +58,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.InputStream;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity
@@ -79,6 +74,7 @@ public class HomeActivity extends AppCompatActivity
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    private FloatingActionButton cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +109,7 @@ public class HomeActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView userName = headerView.findViewById(R.id.user_name);
         final CircleImageView profileImage = headerView.findViewById(R.id.profile_image);
+        cart = findViewById(R.id.fab);
         productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
 
@@ -125,6 +122,13 @@ public class HomeActivity extends AppCompatActivity
 
 
 
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         profileImage.setOnClickListener(new View.OnClickListener() {
@@ -257,8 +261,9 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_categries) {
 
+
         } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_log_out) {
@@ -311,12 +316,21 @@ public class HomeActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products) {
 
                         productViewHolder.productName.setText(products.getProductName());
                         productViewHolder.productPrice.setText("Price:"+products.getPrice());
                         productViewHolder.description.setText(products.getDescription());
                         Picasso.get().load(products.getImage()).into(productViewHolder.productImage);
+
+                        productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                intent.putExtra("pID",products.getpId());
+                                startActivity(intent);
+                            }
+                        });
 
                 }
 

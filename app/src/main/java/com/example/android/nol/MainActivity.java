@@ -94,13 +94,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-       /*GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+       GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         updateUI(account);
-*/
-       /*FirebaseUser user = mAuth.getCurrentUser();
+        finish();
+
+       FirebaseUser user = mAuth.getCurrentUser();
           if(user != null){
             updateUI();
-        }*/
+            finish();
+        }
 
     }
 
