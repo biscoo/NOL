@@ -263,6 +263,7 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_log_out) {
             FirebaseAuth.getInstance().signOut();
+            Intent MainActivity = new Intent(HomeActivity.this, com.example.android.nol.MainActivity.class);
             startActivity(MainActivity);
             finish();
         }
