@@ -53,7 +53,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-
         productImage = findViewById(R.id.product_details_image);
         productName = findViewById(R.id.product_details_name);
         productPrice = findViewById(R.id.product_details_price);
@@ -96,12 +95,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
         final DatabaseReference cartRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         final HashMap<String, Object> cartMap = new HashMap<>();
         cartMap.put("pid",productID);
-        cartMap.put("pname",productName.getText().toString());
-        cartMap.put("price",productID);
+        cartMap.put("name",productName.getText().toString());
+        cartMap.put("price",productPrice.getText().toString());
         cartMap.put("date",saveCurrentDate);
         cartMap.put("time",saveCurrentTime);
         cartMap.put("quantity",quantity.getNumber());
         cartMap.put("discount","");
+
 
         mUser = mAuth.getCurrentUser();
         if(mUser != null) {
@@ -149,10 +149,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
                     Products products = dataSnapshot.getValue(Products.class);
-                    productName.setText(products.getProductName());
+                    productName.setText(products.getName());
                     productPrice.setText(products.getPrice());
                     productDescription.setText(products.getDescription());
-                    Picasso.get().load(products.getImage()).centerCrop().into(productImage);
+                    Picasso.get().load(products.getImage()).into(productImage);
                 }
             }
 

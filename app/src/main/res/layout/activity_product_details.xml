@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+<ScrollView
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    android:layout_margin="3dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +22,7 @@
     <ImageView
         android:id="@+id/product_details_image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:padding="10dp"
@@ -47,7 +53,7 @@
         android:padding="5dp"
         android:text="300$"
         android:textColor="@android:color/black"
-        android:textSize="20dp" />
+        android:textSize="30dp" />
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
         android:id="@+id/product_quantity"
         android:layout_width="120dp"
@@ -68,7 +74,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/main_app_button"
         android:text="Add to Cart"
         android:textColor="#ffff"
@@ -79,14 +85,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/magra"
-        android:padding="5dp"
-        android:text="Product Description"
+        android:paddingLeft="10dp"
+        android:text="Product Description:"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="16dp"/>
     <TextView
         android:id="@+id/product_details_description"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -95,18 +101,20 @@
         android:padding="5dp"
         android:text="Product Description"
         android:textColor="@android:color/black"
-        android:textSize="20dp"/>
+        android:textSize="12dp"/>
 
+
+
+</LinearLayout>
+</ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|end|right"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="13dp"
         android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/nav_cart"
         android:backgroundTint="@android:color/holo_orange_light"/>
-
-</LinearLayout>
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

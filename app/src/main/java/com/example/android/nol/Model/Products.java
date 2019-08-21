@@ -2,29 +2,29 @@ package com.example.android.nol.Model;
 
 public class Products {
 
-    private String productName, description, price, image, category, pId,date,time;
+    private String name, description, price, image, category, pID,date,time;
 
     public Products(){
 
     }
 
-    public Products(String productName, String description, String price, String image, String category, String pId, String date, String time) {
-        this.productName = productName;
+    public Products(String name, String description, String price, String image, String category, String pID, String date, String time) {
+        this.name = name;
         this.description = description;
         this.price = price;
         this.image = image;
         this.category = category;
-        this.pId = pId;
+        this.pID = pID;
         this.date = date;
         this.time = time;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String pname) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -60,11 +60,11 @@ public class Products {
     }
 
     public String getpId() {
-        return pId;
+        return pID;
     }
 
     public void setpId(String pId) {
-        this.pId = pId;
+        this.pID = pId;
     }
 
     public String getDate() {

@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     tools:context=".CartActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+    <TextView
+        android:id="@+id/cart_total_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:text="Total :"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/cart_total_value"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="300 LE"
+        android:layout_gravity="center_horizontal"
+        android:gravity="right|center_vertical"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:paddingRight="30dp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_dark"
+        android:layout_weight="2"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <Button
+        android:id="@+id/checkout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/main_app_button"
+        android:text="Checkout"
+        android:textColor="#ffff"
+        android:textAllCaps="false"/>
+
+
+</RelativeLayout>

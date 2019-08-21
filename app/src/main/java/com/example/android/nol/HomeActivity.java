@@ -90,8 +90,9 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent cart = new Intent(HomeActivity.this,CartActivity.class);
+                startActivity(cart);
+
             }
         });
 
@@ -256,7 +257,8 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
-            // Handle the camera action
+            Intent cart = new Intent(HomeActivity.this,CartActivity.class);
+            startActivity(cart);
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_categries) {
@@ -318,7 +320,7 @@ public class HomeActivity extends AppCompatActivity
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products) {
 
-                        productViewHolder.productName.setText(products.getProductName());
+                        productViewHolder.productName.setText(products.getName());
                         productViewHolder.productPrice.setText("Price:"+products.getPrice());
                         productViewHolder.description.setText(products.getDescription());
                         Picasso.get().load(products.getImage()).into(productViewHolder.productImage);

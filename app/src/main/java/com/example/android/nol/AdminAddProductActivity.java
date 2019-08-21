@@ -42,7 +42,8 @@ public class AdminAddProductActivity extends AppCompatActivity {
     private EditText productName, productDescription, productPrice;
     private ImageView productImage;
     private int RESULT_LOAD_IMAGE= 100;
-    private String productRanKey, downlaodImageUrl;
+    private String productRanKey; 
+    private String downloadImageUrl;
     private StorageReference productImageRef;
     private DatabaseReference productRef;
     private ProgressDialog loadingBar;
@@ -147,7 +148,7 @@ public class AdminAddProductActivity extends AppCompatActivity {
                             throw task.getException();
 
                         }
-                        downlaodImageUrl = filePath.getDownloadUrl().toString();
+                        downloadImageUrl = filePath.getDownloadUrl().toString();
                         return filePath.getDownloadUrl();
 
                     }
@@ -155,7 +156,7 @@ public class AdminAddProductActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
                             if(task.isSuccessful()){
-                                downlaodImageUrl = task.getResult().toString();
+                                downloadImageUrl = task.getResult().toString();
                                 Toast.makeText(AdminAddProductActivity.this, "Got the product image URL successfully ", Toast.LENGTH_SHORT).show();
 
                                 saveProductInfoToDataBase();
@@ -174,7 +175,7 @@ public class AdminAddProductActivity extends AppCompatActivity {
         productMap.put("date",saveCurrentDate);
         productMap.put("Time",saveCurrentTime);
         productMap.put("description",description);
-        productMap.put("image",downlaodImageUrl);
+        productMap.put("image",downloadImageUrl);
         productMap.put("category",categoryName);
         productMap.put("price",price);
         productMap.put("name",pName);
