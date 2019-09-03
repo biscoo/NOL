@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.example.android.nol.Activities.CartActivity"
+    android:background="@drawable/admin_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <TextView
+            android:id="@+id/admin_order_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:text="New Orders"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:fontFamily="@font/smile_bold"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/orders_empty_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:text="NO New Orders"
+        android:textSize="25dp"
+        android:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/admin_orders_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</RelativeLayout>

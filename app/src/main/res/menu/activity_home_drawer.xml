@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -8,27 +9,32 @@
             android:id="@+id/nav_cart"
             android:icon="@drawable/nav_cart"
             android:title="Cart"
-            android:iconTint="@android:color/white"/>
+            android:iconTint="@android:color/white"
+            app:itemTextAppearance="@font/smile_regular"/>
         <item
-            android:id="@+id/nav_orders"
-            android:icon="@drawable/order24px"
-            android:title="Orders" />
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search"
+            android:title="Search"
+            app:itemTextAppearance="@font/smile_regular"/>
         <item
             android:id="@+id/nav_categries"
             android:icon="@drawable/category"
             android:title="Categories"
-            android:iconTint="@android:color/white"/>
+            android:iconTint="@android:color/white"
+            app:itemTextAppearance="@font/smile_regular"/>
 
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/account"
             android:title="My Profile"
-            android:iconTint="@android:color/white"/>
+            android:iconTint="@android:color/white"
+            app:itemTextAppearance="@font/smile_regular"/>
         <item
             android:id="@+id/nav_log_out"
             android:icon="@drawable/logout"
             android:title="Log Out"
-            android:iconTint="@android:color/white"/>
+            android:iconTint="@android:color/white"
+            app:itemTextAppearance="@font/smile_regular"/>
 
     </group>
 

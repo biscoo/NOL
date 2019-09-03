@@ -2,16 +2,16 @@ package com.example.android.nol.Model;
 
 public class Users {
 
-    private String name, email, password,address,phone ;
+    private String name, email,address,phone,image ;
 
     public Users(){
 
     }
 
-    public Users(String name, String email, String password,String address,String phone) {
+    public Users(String name, String email, String image,String address,String phone) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.image = image;
         this.address = address;
         this.phone = phone;
     }
@@ -48,11 +48,11 @@ public class Users {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getImage() {
+        return image;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

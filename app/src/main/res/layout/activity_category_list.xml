@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        tools:context="com.example.android.nol.Activities.AdminActivity">
+
+        <TextView
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/smile_regular"
+            android:text="Categories"
+            android:textAlignment="center"
+            android:textSize="27sp" />
+
+        <RelativeLayout
+            android:id="@+id/linear_category_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/categories"
+            android:layout_margin="10dp"
+            android:layout_marginTop="50dp"
+
+            android:padding="10dp">
+
+
+
+            <ImageView
+                android:id="@+id/accessories"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/accessories" />
+
+            <ImageView
+                android:id="@+id/embroidery"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/accessories"
+                android:layout_gravity="left"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/embriodery" />
+
+            <ImageView
+                android:id="@+id/home_decoration"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/home_decoration" />
+
+            <ImageView
+                android:id="@+id/bags"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/home_decoration"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/bags" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</LinearLayout>

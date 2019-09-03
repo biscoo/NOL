@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminAddProductActivity">
+    tools:context="com.example.android.nol.Activities.AdminAddProductActivity"
+    android:background="@drawable/admin_background">
     
     <ImageView
         android:id="@+id/select_product_image"
@@ -21,28 +22,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/select_product_image"
-        android:inputType="textImeMultiLine"
+        android:inputType="textCapWords"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/input_design"
         android:hint="Product Name"
-        android:gravity="center" />
+        android:gravity="center"
+        android:fontFamily="@font/smile_regular"/>
     
     <EditText
         android:id="@+id/write_product_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/write_product_name"
-        android:inputType="textImeMultiLine"
+        android:inputType="textMultiLine"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/input_design"
         android:hint="Product Description"
-        android:gravity="center" />
+        android:gravity="center"
+        android:fontFamily="@font/smile_regular"/>
     <EditText
         android:id="@+id/write_product_price"
         android:layout_width="match_parent"
@@ -55,7 +58,8 @@
         android:layout_marginRight="45dp"
         android:background="@drawable/input_design"
         android:hint="Product Price"
-        android:gravity="center" />
+        android:gravity="center"
+        android:fontFamily="@font/smile_regular"/>
     
     <Button
         android:id="@+id/add_product"
@@ -71,7 +75,6 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:background="@drawable/buttons"
-
-        />
+        android:fontFamily="@font/smile_regular"/>
 
 </RelativeLayout>

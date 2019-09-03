@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfileActivity"
+    tools:context=".Activities.EditProfileActivity"
     android:orientation="vertical">
 
 <LinearLayout
@@ -36,6 +36,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="User name"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/white"
         android:gravity="center"/>
 
 
@@ -54,16 +55,16 @@
             android:background="@drawable/reg_edit_text"
             android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName" />
+            android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/edit_profile_last_name"
+            android:id="@+id/edit_profile_email"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:ems="10"
-            android:hint="Last Name"
+            android:hint="Email"
             android:inputType="textEmailAddress"
 
             android:background="@drawable/reg_edit_text"/>
@@ -87,7 +88,7 @@
             android:layout_marginTop="15dp"
             android:ems="10"
             android:hint="Address"
-            android:inputType="textPassword"
+            android:inputType="textCapSentences"
             android:background="@drawable/reg_edit_text"/>
 
         <Button

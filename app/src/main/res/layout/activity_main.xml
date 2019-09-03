@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/welcome"
+    tools:context=".Activities.MainActivity"
+    android:background="@drawable/main_entrance"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/applogo" />
-    <TextView
-        android:id="@+id/app_slogan"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/slogan"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold|italic"
-        android:textSize="22sp"/>
+
+
 
     <Button
         android:id="@+id/main_join_now_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="90dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/input_design"
-        android:padding="20dp"
+        android:padding="5dp"
         android:text="@string/join_now"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textColor="#64c1ec"
+        android:textSize="14sp"
+        android:fontFamily="@font/smile_regular"/>
 
     <Button
         android:id="@+id/main_login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/main_join_now_btn"
         android:background="@drawable/buttons"
-        android:padding="20dp"
+        android:padding="5dp"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textSize="14sp"
+        android:fontFamily="@font/smile_regular"/>
 
     <Button
         android:id="@+id/main_google_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/main_login_btn"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/reg_google"
         android:drawableStart="@drawable/googleg_standard_color_18"
-        android:drawablePadding="10dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
+        android:drawablePadding="5dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
         android:text="Sign In with Google"
         android:textAllCaps="false"
         android:textColor="#423434"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:fontFamily="@font/smile_regular"/>
 
     <ProgressBar
         android:id="@+id/google_progressBar"
@@ -81,6 +70,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/main_google_login"
+        android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+</RelativeLayout>

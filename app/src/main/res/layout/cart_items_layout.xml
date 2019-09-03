@@ -28,9 +28,11 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="3"
-                android:padding="2dp"
+                android:padding="6dp"
                 android:layout_margin="4dp"
-                android:background="@drawable/input_design"/>
+                android:background="@drawable/image_frame"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

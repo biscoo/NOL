@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".HomeActivity"
-    tools:showIn="@layout/app_bar_home">
+    tools:context=".Activities.HomeActivity"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_menu"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical">

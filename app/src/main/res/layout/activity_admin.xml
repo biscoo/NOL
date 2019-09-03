@@ -1,70 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="wrap_content"
+    android:background="@drawable/admin_background"
+    tools:context="com.example.android.nol.Activities.AdminActivity">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/add_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".AdminActivity">
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/smile_bold"
+        android:text="Admin Home"
+        android:textAlignment="center"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/linear_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_product"
+        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/image_frame"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/add_product"
+            android:id="@+id/add_product_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp"
-            android:text="Add Product"
-            android:textAlignment="center"
-            android:textSize="27sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/smile_regular"
+            android:gravity="center_horizontal"
+            android:text="Add product"
+            android:textSize="20dp" />
 
-        <LinearLayout
-            android:id="@+id/linear_category_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/add_product"
-            android:orientation="vertical">
+        <ImageView
+            android:id="@+id/accessories"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/add_product_text"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/accessories" />
 
-            <ImageView
-                android:id="@+id/accessories"
-                android:layout_width="390dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/banner1" />
+        <ImageView
+            android:id="@+id/embroidery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/accessories"
+            android:layout_gravity="left"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/embriodery" />
 
-            <ImageView
-                android:id="@+id/embroidery"
-                android:layout_width="390dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/banner2" />
+        <ImageView
+            android:id="@+id/home_decoration"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/add_product_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/home_decoration" />
 
-            <ImageView
-                android:id="@+id/home_decoration"
-                android:layout_width="390dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/banner3" />
-
-            <ImageView
-                android:id="@+id/bags"
-                android:layout_width="390dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/banner4" />
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/bags"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/home_decoration"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bags" />
 
 
     </RelativeLayout>
-</ScrollView>
+
+    <RelativeLayout
+        android:layout_below="@+id/linear_category_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/admin_log_out"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/main_app_button"
+        android:fontFamily="@font/smile_regular"
+        android:text="Check New Orders"
+        android:textAllCaps="false"
+        android:textColor="#ffff" />
+
+    <Button
+        android:id="@+id/admin_log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_design"
+        android:fontFamily="@font/smile_regular"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:textColor="#64c1ec" />
+</RelativeLayout>
+    <!--<Button
+        android:id="@+id/admin_modify_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/main_app_button"
+        android:text="Modify or Remove"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:layout_above="@+id/admin_log_out"
+        />-->
+
+
+</RelativeLayout>
+</LinearLayout>

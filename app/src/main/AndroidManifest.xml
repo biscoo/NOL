@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.android.nol">
+
+    <dist:module dist:instant="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,20 +16,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"></activity>
-        <activity android:name=".ProductDetailsActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".AdminAddProductActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".CategoryActivity" />
+        <activity android:name="com.example.android.nol.Activities.CategoryListActivity"></activity>
+        <activity android:name=".Activities.ForgotPasswordActivity" />
+        <activity android:name=".Activities.SearchActivity" />
+        <activity android:name="com.example.android.nol.Activities.AdminOrderDetalisActivity" />
+        <activity android:name="com.example.android.nol.Activities.AdminNewOrdersActivity" />
+        <activity android:name=".Activities.ConfirmOrderActivity" />
+        <activity android:name="com.example.android.nol.Activities.CartActivity" />
+        <activity android:name=".Activities.ProductDetailsActivity" />
+        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.EditProfileActivity" />
+        <activity android:name="com.example.android.nol.Activities.AdminAddProductActivity" />
+        <activity android:name="com.example.android.nol.Activities.AdminActivity" />
+        <activity android:name="com.example.android.nol.Activities.CategoryActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.RegisterActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

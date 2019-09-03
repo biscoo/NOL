@@ -4,7 +4,7 @@
     <string name="login">Already have an account? Login</string>
     <string name="join_now">Join Now</string>
     <string name="Sign_up_brief">Create a new account. You can sign up with your Email or Google account.</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home">Al NOL</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -18,5 +18,10 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="Forgot_Password"><u>Forgot your password?</u></string>
+    <string name="reset_msg">We just need your registered Email ID to sent you Password reset instructions.</string>
 
 </resources>
+
+
+

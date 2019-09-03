@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".CartActivity">
+    tools:context="com.example.android.nol.Activities.CartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,16 +26,28 @@
         android:id="@+id/cart_total_value"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="300 LE"
+        android:text="0 LE"
         android:layout_gravity="center_horizontal"
         android:gravity="right|center_vertical"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:paddingRight="30dp"
         android:textColor="@android:color/black"
         android:background="@android:color/holo_green_dark"
         android:layout_weight="2"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/cart_empty_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:text="Your Cart is Empty"
+        android:textSize="25dp"
+        android:visibility="gone"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_list"
         android:layout_width="match_parent"
